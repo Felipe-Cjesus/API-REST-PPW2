@@ -10,9 +10,9 @@ router.get('/', async (req, res, next) => {
     try{
 
         let filter = {}
-        if(req.query.posicao) filter.posicao = req.query.posicao
+        if(req.query.idade) filter.idade = req.query.idade
 
-        const limit = Math.min(parseInt(req.query.limit), 10) || 10
+        const limit = Math.min(parseInt(req.query.limit), 100) || 100
         const skip = parseInt(req.query.skip) || 0
         let jogadores = []
         jogadores = await Jogador.find(filter).limit(limit).skip(skip)

@@ -7,7 +7,13 @@ const routes = require('./routes')
 app.use('/api', routes)
 
 app.get('/', (req, res) => {
-    res.json("Aplicação de manipulação de Futebol CRUD desenvolvido GET/ GETbyID / PUT / POST / DELETE. Endpoint:  /api/")
+    res.json({
+        "descricao": "Aplicação de manipulação de Futebol CRUD desenvolvido GET/ GETbyID / PUT / POST / DELETE. Endpoint: /app/",
+        "Recurso":{
+            "jogador": "/app/jogador",
+            "pais": "/app/pais"
+        }  
+    })
 })
 
 app.use(function(err, req, res, next){
