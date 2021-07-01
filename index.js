@@ -8,10 +8,10 @@ app.use('/api', routes)
 
 app.get('/', (req, res) => {
     res.json({
-        "descricao": "Aplicação de manipulação de Futebol CRUD desenvolvido GET/ GETbyID / PUT / POST / DELETE. Endpoint: /app/",
+        "descricao": "Aplicação de manipulação de Futebol CRUD desenvolvido GET/ GETbyID / PUT / POST / DELETE. Endpoint: /api/",
         "Recurso":{
-            "jogador": "/app/jogador",
-            "pais": "/app/pais"
+            "jogador": "/api/jogador",
+            "pais": "/api/pais"
         }  
     })
 })
