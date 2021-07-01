@@ -30,12 +30,13 @@ router.get('/:id', async (req, res, next) => {
         const id = req.params.id
         const URL = 'https://app-ppw2.herokuapp.com/api/clubes'
         let jogador = await Jogador.findById(id).populate('clube')
-        if(!jogador){
+       /* if(!jogador){
             res.statusCode = 404
             throw new Error("O objeto pesquisado não foi encontrado!")
-        }
+        }*/
         const club = await axios.get(URL)
-        jogador.clube = club
+        console.log(club.data)
+        jogador.clube = club.data
         res.json(club)
     } catch(err) {
         next(err)
