@@ -37,6 +37,7 @@ router.get('/:id', async (req, res, next) => {
             res.statusCode = 404
             throw new Error("O objeto pesquisado não foi encontrado!")
         }
+        
         const { data } = await axios.get(URL)
         let idClube = jogador.clube
 
@@ -78,7 +79,7 @@ router.delete('/:id', async (req, res, next) => {
     try{
         const id = req.params.id
         const resultado = await Jogador.findByIdAndDelete(id)
-        res.json(resultado)
+        res.json({"msg":"Jogador Deletado!", "jogador": resultado})
     }catch(err){
         next(err)
     }

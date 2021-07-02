@@ -70,6 +70,7 @@
 
     // GET https://projetofinal-ppw2.herokuapp.com/api/jogador/60dd01186980e12e3c4340a5
 ---
+    
     {
     "posicao": [
         "Atacante",
@@ -91,8 +92,18 @@
     },
     "nacionalidade": "Argentino",
     "createdAt": "2021-06-30T23:41:12.659Z",
-    "updatedAt": "2021-07-02T12:13:49.340Z",
-    "__v": 0
+    "updatedAt": "2021-07-02T17:13:44.213Z",
+    "__v": 0,
+    "pais": {
+        "_id": "60de5707d5a48f27e4841f97",
+        "nome": "Argentina",
+        "continente": "America do Sul",
+        "sigla": "ARG",
+        "capital": "Buenos Aires",
+        "createdAt": "2021-07-02T00:00:07.071Z",
+        "updatedAt": "2021-07-02T00:00:07.071Z",
+        "__v": 0
+        }
     }
 
 Utilizando a query string para personalizar a requisição.

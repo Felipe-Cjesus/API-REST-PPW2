@@ -68,7 +68,7 @@ router.delete('/:id', async (req, res, next) => {
     try{
         const id = req.params.id
         const resultado = await Pais.findByIdAndDelete(id)
-        res.json(resultado)
+        res.json({"msg":"País Deletado!", "pais": resultado})
     }catch(err){
         next(err)
     }
