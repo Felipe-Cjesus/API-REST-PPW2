@@ -38,3 +38,4 @@
 > Status do Projeto: Implatação Concluido ✅
 ---
 Desenvolvido por [Felipe Costa de Jesus](https://www.instagram.com/felipe.cjesus/) 😎🤙
+- Em parceria com [Pedro Ventura](https://github.com/pventur-a) 😎🤙

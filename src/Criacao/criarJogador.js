@@ -1,5 +1,6 @@
 const Jogador = require('../models/Jogador')
 
+//Estrutura para banco de dados e testes de criações iniciais
 const Jog = new Jogador({
     nome: "Felipe",
     idade: 30,
