@@ -11,11 +11,17 @@ router.get('/', async (req, res, next) => {
         let filter = {}
         if(req.query.continente) filter.continente = req.query.continente
 
-        const limit = Math.min(parseInt(req.query.limit), 10) || 10
+        const limit = Math.min(parseInt(req.query.limit), 100) || 100
         const skip = parseInt(req.query.skip) || 0
+
         let paises = []
         paises = await Pais.find(filter).limit(limit).skip(skip)
-
+        
+        if(!paises){
+            res.statusCode = 204
+            throw new Error("Lista de países vazia!")
+        }
+    
         res.json(paises)
     } catch(err) {
         next(err)
@@ -40,7 +46,7 @@ router.get('/:id', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     try{
         const pais = new Pais (req.body)
-        const resultado = await pais.save()
+        const resultado = await pais.save() 
         res.json(resultado)
     }catch(err){
         next(err)

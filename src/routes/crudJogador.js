@@ -17,6 +17,11 @@ router.get('/', async (req, res, next) => {
         let jogadores = []
         jogadores = await Jogador.find(filter).limit(limit).skip(skip)
 
+        if(!jogadores){
+            res.statusCode = 204
+            throw new Error("Lista de jogadores vazia!")
+        }
+
         res.json(jogadores)
     } catch(err) {
         next(err)
@@ -40,8 +45,8 @@ router.get('/:id', async (req, res, next) => {
                 jogador.clube = data[i]
             }
         }
-
         res.json(jogador)
+
     } catch(err) {
         next(err)
     }
