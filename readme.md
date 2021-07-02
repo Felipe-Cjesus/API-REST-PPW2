@@ -10,10 +10,9 @@
     <a href = "https://projetofinal-ppw2.herokuapp.com/">🚀 Acessar aplicação</a>
 </h1>
 
-
 ## O que a aplicação é capaz de fazer 🏁
 ### API criada para gerar uma listagem com jogadores de futebol. Foi desenvolvido dois end points cada um com sua API REST / CRUD. Ao gravar um jogador novo a API pega a propriedade Clube de uma API externa.
-
+ 
 ---
 ## Link API Externa ✔
 - https://app-ppw2.herokuapp.com/api/clubes
@@ -33,7 +32,9 @@
 ## 📚 Bibliotecas
 - [Express](https://expressjs.com/pt-br/)
 - [Axios](https://www.npmjs.com/package/node-html-parser)
+- [Mongoose](https://mongoosejs.com/)
+- [Dotenv](https://www.npmjs.com/package/dotenv)
 
-> Status do Projeto: Concluido ✅
+> Status do Projeto: Implatação Concluido ✅
 ---
 Desenvolvido por [Felipe Costa de Jesus](https://www.instagram.com/felipe.cjesus/) 😎🤙
