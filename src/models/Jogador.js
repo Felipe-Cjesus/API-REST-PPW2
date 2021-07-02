@@ -5,10 +5,7 @@ let jogadorSchema = new mongoose.Schema({
     idade: Number,
     posicao: Array,
     num_camisa: Number,
-    clube: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Jogador'
-    },
+    clube: Object,
     nacionalidade: String
 }, {timestamps: true})
 

@@ -1,4 +1,4 @@
-const Pais = require('./models/Pais')
+const Pais = require('../models/Pais')
 
 const p = new Pais({
     nome: "Espanha",

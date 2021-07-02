@@ -1,4 +1,4 @@
-const Jogador = require('./models/Jogador')
+const Jogador = require('../models/Jogador')
 
 const Jog = new Jogador({
     nome: "Felipe",

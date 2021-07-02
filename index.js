@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 const PORT = process.env.PORT || 8080
-const routes = require('./routes')
+const routes = require('./src/routes')
 
 app.use('/api', routes)
 
