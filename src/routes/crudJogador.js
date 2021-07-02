@@ -32,7 +32,7 @@ router.get('/:id', async (req, res, next) => {
     try{
         const id = req.params.id
         const URL = 'https://app-ppw2.herokuapp.com/api/clubes'
-        let jogador = await Jogador.findById(id)
+        let jogador = await Jogador.findById(id).populate("pais")
         if(!jogador){
             res.statusCode = 404
             throw new Error("O objeto pesquisado não foi encontrado!")

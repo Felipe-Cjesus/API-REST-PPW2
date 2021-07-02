@@ -6,7 +6,11 @@ let jogadorSchema = new mongoose.Schema({
     posicao: Array,
     num_camisa: Number,
     clube: Object,
-    nacionalidade: String
+    nacionalidade: String,
+    pais: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Pais"
+    }
 }, {timestamps: true})
 
 const Jogador = mongoose.model('Jogador', jogadorSchema)
