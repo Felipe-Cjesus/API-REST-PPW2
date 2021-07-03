@@ -31,10 +31,10 @@ router.get('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try{
         const id = req.params.id
-        let pais = await Pais.findById(id)
+        const pais = await Pais.findById(id)
         if(!pais){
             res.statusCode = 404
-            throw new Error("O objeto pesquisado não foi encontrado!")
+            res.json({"msg":"O objeto pesquisado não foi encontrado!"})
         }
         res.json(pais)
     } catch(err) {
@@ -58,6 +58,10 @@ router.put('/:id', async (req, res, next) => {
         const id = req.params.id
         const pBody = req.body
         const resultado = await Pais.findByIdAndUpdate(id, pBody)
+        if(!resultado){
+            res.statusCode = 404
+            res.json({"msg":"O objeto pesquisado não foi encontrado!"})
+        }
         res.json(resultado)
     }catch(err){
         next(err)
@@ -69,6 +73,10 @@ router.delete('/:id', async (req, res, next) => {
         const id = req.params.id
         const resultado = await Pais.findByIdAndDelete(id)
         res.json({"msg":"País Deletado!", "pais": resultado})
+        if(!resultado){
+            res.statusCode = 404
+            res.json({"msg":"O objeto pesquisado não foi encontrado!"})
+        }
     }catch(err){
         next(err)
     }

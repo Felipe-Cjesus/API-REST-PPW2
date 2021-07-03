@@ -32,10 +32,10 @@ router.get('/:id', async (req, res, next) => {
     try{
         const id = req.params.id
         const URL = 'https://app-ppw2.herokuapp.com/api/clubes'
-        let jogador = await Jogador.findById(id).populate("pais")
+        const jogador = await Jogador.findById(id).populate("pais")
         if(!jogador){
             res.statusCode = 404
-            throw new Error("O objeto pesquisado não foi encontrado!")
+            res.json({"msg":"O objeto pesquisado não foi encontrado!"})
         }
         
         const { data } = await axios.get(URL)
@@ -69,6 +69,10 @@ router.put('/:id', async (req, res, next) => {
         const id = req.params.id
         const jogBody = req.body
         const resultado = await Jogador.findByIdAndUpdate(id, jogBody)
+        if(!resultado){
+            res.statusCode = 404
+            res.json({"msg":"O objeto pesquisado não foi encontrado!"})
+        }
         res.json(resultado)
     }catch(err){
         next(err)
@@ -79,6 +83,10 @@ router.delete('/:id', async (req, res, next) => {
     try{
         const id = req.params.id
         const resultado = await Jogador.findByIdAndDelete(id)
+        if(!resultado){
+            res.statusCode = 404
+            res.json({"msg":"O objeto pesquisado não foi encontrado!"})
+        }
         res.json({"msg":"Jogador Deletado!", "jogador": resultado})
     }catch(err){
         next(err)
